@@ -6,47 +6,73 @@ namespace Methods_Exercise_01_Answers
     {
         static void Main(string[] args)
         {
-            // TODO: For each method call the AddSpaces() method to separate the answers!
-
-            // TODO: Call the PrintGreeting() method
-
-            // TODO: Call the SayHello() method
-
-            // TODO: Call the GreetUser() method
-
-            // TODO: Call the Exponentiate() method and store the returned value in a variable called result
-            // TODO: Write result out to the console (display the result creatively)
-
-            // TODO: Call the IsPrime() method and write out the result to the console
-            // TODO: Creatively display the information to the console window
+            Program.PrintGreeting();
+            Program.AddSpaces();
+            Program.SayHello("Amr", "Yousry");
+            Program.AddSpaces();
+            Program.GreetUser();
+            Program.AddSpaces();
+            Program.Exponentiate();
+            Program.AddSpaces();
+            Program.IsPrime();
         }
 
-        // TODO: Create a public static method called AddSpaces() which creates 2 blank lines when called
-        // and does NOT **return** anything
+        public static void AddSpaces() 
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+        }
 
+        public static void PrintGreeting() 
+        {
+            Console.WriteLine("Hello World");
+        }
 
+        public static void SayHello(string firstName, string LastName) 
+        {
+            Console.WriteLine($"Hello, {firstName} {LastName}!");
+        }
 
-        // TODO: Create a public static method called PrintGreeting() with a return type of void that takes no parameters,
-        // and writes to the console "Hello World!"
+        public static void GreetUser() 
+        {
+            Console.WriteLine("What is your name?");
+            string name = Console.ReadLine();
+            Console.WriteLine($"Hello {name}");
+        }
 
+        public static void Exponentiate() 
+        {
+            Console.WriteLine("Enter first number:");
+            int num = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("Enter PowerOf number:");
+            int powerOf = int.Parse(Console.ReadLine());
 
-        // TODO: Create a public static method called SayHello() with a return type of void which takes 2 parameters firstName & lastName,
-        // and concatenates them into a sentence Ex: "Hello, John Smith!" then writes them to the console
+            Console.WriteLine(Math.Pow(num, powerOf));
+        }
 
+        public static void IsPrime() 
+        {
+            Console.WriteLine("Enter number to check if prime:");
+            int num = int.Parse(Console.ReadLine());
+            int counter = 0;
 
+            for (int i = 1; i <= num; i++)
+            {
+                if (num % i == 0)
+                {
+                    counter++;
+                }
+            }
+            if (counter == 2)
+            {
+                Console.WriteLine("{0} is a Prime Number", num);
+            }
+            else
+            {
+                Console.WriteLine("Not a Prime Number");
+            }
+        }
 
-        // TODO: Create a method called GreetUser() that asks the user for their name
-        // then greets them with that name to the console (don't forget to prompt the user to enter their name!)
-
-
-
-        // TODO: Create a method called Exponentiate() that asks the user for a number and a powerOF
-        // and then calculates the result of raising the first to the second (don't forget to prompt the user to enter the 2 numbers!)
-
-
-
-        // TODO: Create a method called IsPrime() that asks the user for a number then returns true if the number is prime or false otherwise
-        // (don't forget to prompt the user to enter the number!)
     }
 }
